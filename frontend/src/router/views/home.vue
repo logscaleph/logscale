@@ -13,10 +13,18 @@ export default {
 
 <template>
   <Layout>
-    <h1>Home Page</h1>
+    <h1 class="bg-red">
+      Home Page
+    </h1>
     <img
       src="@assets/images/logo.png"
       alt="Logo"
     >
   </Layout>
 </template>
+
+<style lang="postcss" scoped>
+h1 {
+  @apply text-purple flex;
+}
+</style>
