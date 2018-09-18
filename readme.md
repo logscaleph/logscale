@@ -150,3 +150,45 @@ If you want to specify a different name for the test database, don't forget to c
 ## Feedback
 
 I currently made this project for personal purposes. I decided to share it here to help anyone with the same needs. If you have any feedback to improve it, feel free to make a suggestion, or open a PR!
+
+## Nginx Configuration for API
+```
+server {
+    listen       8080;
+    server_name  logscale.test;
+    # set client body size to 2M #
+    client_max_body_size 2M;
+
+    access_log  /path/Sites/logs/logscale.access.log  combined;
+    error_log /path/Sites/logs/logscale.error.log  error;
+
+    root /path/Sites/logscale/public;
+
+    index   index.php;
+
+    location / {
+        try_files   $uri $uri/ /index.php?$query_string;
+    }
+
+    # Remove trailing slash to please routing system.
+    if (!-d $request_filename) {
+        rewrite     ^/(.+)/$ /$1 permanent;
+    }
+
+    # PHP FPM configuration.
+    location ~* \.php$ {
+        fastcgi_pass            127.0.0.1:9056;
+        fastcgi_index           index.php;
+        fastcgi_read_timeout    150;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        include                 fastcgi_params;
+        fastcgi_param           SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+```
