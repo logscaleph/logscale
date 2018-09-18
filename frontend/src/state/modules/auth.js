@@ -31,7 +31,7 @@ export const actions = {
   logIn({ commit, dispatch, getters }, { username, password } = {}) {
     if (getters.loggedIn) return dispatch('validate')
 
-    return axios.post('/api/session', { username, password }).then(response => {
+    return axios.post('/api/auth/login', { username, password }).then(response => {
       const user = response.data
       commit('SET_CURRENT_USER', user)
       return user
@@ -49,7 +49,7 @@ export const actions = {
     if (!state.currentUser) return Promise.resolve(null)
 
     return axios
-      .get('/api/session')
+      .get('/api/auth/login')
       .then(response => {
         const user = response.data
         commit('SET_CURRENT_USER', user)
