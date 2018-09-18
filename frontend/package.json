@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --modern",
+    "build": "rm -rf ../public/{js,css,img} && vue-cli-service build --no-clean --modern",
     "test": "yarn unit && yarn e2e",
     "e2e": "vue-cli-service test:e2e --headless",
     "lint": "eslint --ext .js,.vue --fix . && stylelint --fix \"src/**/*.vue\" \"src/**/*.scss\" && markdownlint docs/*.md *.md && prettier --list-different --write \"**/*.{js,json,css,scss,vue,md}\"",
