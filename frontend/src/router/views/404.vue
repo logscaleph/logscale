@@ -19,7 +19,7 @@ export default {
 <template>
   <Layout>
     <div class="flex justify-center items-center h-screen">
-      <div class="flex items-center bg-blue-lighter w-9/10 sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-xl" style="height: 30rem">
+      <div class="pattern flex items-center bg-blue-lighter w-9/10 sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-xl" style="height: 30rem">
         <div class="flex flex-col lg:flex-row items-center lg:-mx-48 mx-auto">
           <img class="z-10" src="/images/dog-bryan.svg" alt="">
           <div class="self-end flex flex-col">
@@ -44,7 +44,8 @@ h1 {
   bottom: -27px;
 }
 
-p {
-  text-shadow: .2px .5px 1px rgba(#010, .3);
+.pattern {
+  background-image: url('/images/swirl_pattern.png');
+  background-blend-mode: color-burn;
 }
 </style>
