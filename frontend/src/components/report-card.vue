@@ -23,17 +23,17 @@ export default {
 
 <style scoped>
 .purple {
-  background-image: url('/swirl_pattern.png'), linear-gradient(-225deg, #9361B4 0%, #CD81FF 100%);
+  background-image: url('/images/swirl_pattern.png'), linear-gradient(-225deg, #9361B4 0%, #CD81FF 100%);
   background-blend-mode: color-burn;
 }
 
 .green {
-  background-image: url('/swirl_pattern.png'), linear-gradient(-225deg, #7EBE69 0%, #9EED83 100%);
+  background-image: url('/images/swirl_pattern.png'), linear-gradient(-225deg, #7EBE69 0%, #9EED83 100%);
   background-blend-mode: color-burn;
 }
 
 .red {
-  background-image: url('/swirl_pattern.png'), linear-gradient(-225deg, #F75A5A 0%, #FF7C88 100%);
+  background-image: url('/images/swirl_pattern.png'), linear-gradient(-225deg, #F75A5A 0%, #FF7C88 100%);
   background-blend-mode: color-burn;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div class="w-1/4 md:px-6 lg:px-8 xl:px-12 hidden md:block">
   <div class="text-2xl font-bold text-center my-8 text-teal">
-    <img class="h-8" src="/logo.svg" alt="">
+    <img class="h-8" src="/images/logo.svg" alt="">
   </div>
   <div class="flex md:flex-col lg:flex-row py-4">
     <Avatar class="mx-auto" username="Trajano, Cesar" background-color="#dae1e7"/>

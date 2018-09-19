@@ -54,6 +54,6 @@ a {
 // ===
 
 #nprogress .bar {
-  background: $color-link-text;
+  @apply bg-blue-light;
 }
 </style>
