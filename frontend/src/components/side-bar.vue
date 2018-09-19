@@ -45,9 +45,9 @@ export default {
     return {
       menu: [
         { title: 'Dashboard', icon: 'icon-home', route: { name: 'home' } },
-        { title: 'Entries', icon: 'icon-file', route: { name: 'home' } },
-        { title: 'Summary', icon: 'icon-note', route: { name: 'home' } },
-        { title: 'Reports', icon: 'icon-chart', route: { name: 'home' } },
+        { title: 'Entries', icon: 'icon-file', route: { name: 'entries' } },
+        { title: 'Summary', icon: 'icon-note', route: { name: 'summary' } },
+        { title: 'Reports', icon: 'icon-chart', route: { name: 'reports' } },
       ]
     }
   }
