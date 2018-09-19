@@ -1,9 +1,9 @@
 <template>
-  <nav class="flex p-8 bg-white items-center justify-between">
+  <nav class="flex flex-wrap p-8 bg-white items-center justify-between">
     <div>
       <i class="text-grey icon-search mr-2"></i>
       <input
-        class="text-xl text-grey-dark outline-none w-64"
+        class="text-xl text-grey-dark outline-none md:w-64"
         type="text"
         placeholder="Search Entry"
       >

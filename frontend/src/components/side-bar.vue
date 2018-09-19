@@ -1,5 +1,5 @@
 <template>
-<div class="w-1/4 px-12">
+<div class="w-1/4 px-12 hidden md:block">
   <div class="text-2xl font-bold text-center my-8 text-teal">
     <img class="h-8" src="/logo.svg" alt="">
   </div>

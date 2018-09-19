@@ -5,7 +5,7 @@
     <div class="flex-1 bg-grey-lighter h-full">
       <NavBar/>
       <!-- Content -->
-      <div class="container mx-auto w-9/10 my-12">
+      <div class="mx-auto w-9/10 my-12">
         <slot/>
       </div>
     </div>
