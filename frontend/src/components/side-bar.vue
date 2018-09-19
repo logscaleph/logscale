@@ -4,7 +4,7 @@
     <img class="h-8" src="/logo.svg" alt="">
   </div>
   <div class="flex py-4">
-    <div class="rounded-full h-12 bg-grey w-12 pr-8" />
+    <Avatar username="Trajano, Cesar" background-color="#dae1e7"/>
     <div class="flex-1 pl-4 flex flex-col justify-center">
       <p class="font-bold">
         Trajano, Cesar
@@ -40,7 +40,13 @@
 </template>
 
 <script>
+import Avatar from 'vue-avatar'
+
 export default {
+  components: {
+    Avatar
+  },
+
   data () {
     return {
       menu: [

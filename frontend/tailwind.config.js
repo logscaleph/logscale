@@ -98,7 +98,7 @@ let colors = {
   'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',
   'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
+  'blue-light': '#47BFFF',
   'blue-lighter': '#bcdefa',
   'blue-lightest': '#eff8ff',
 
@@ -484,6 +484,7 @@ module.exports = {
     '4/5': '80%',
     '1/6': '16.66667%',
     '5/6': '83.33333%',
+    '9/10': '90%',
     'full': '100%',
     'screen': '100vw',
   },
