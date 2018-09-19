@@ -19,7 +19,7 @@ export default {
 <template>
   <Layout>
     <div class="flex justify-center items-center h-screen">
-      <div class="pattern flex items-center bg-blue-lighter w-9/10 sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-xl" style="height: 30rem">
+      <div class="pattern flex items-center bg-blue-lighter w-9/10 sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-xl shadow" style="height: 30rem">
         <div class="flex flex-col lg:flex-row items-center lg:-mx-48 mx-auto">
           <img class="z-10" src="/images/dog-bryan.svg" alt="">
           <div class="self-end flex flex-col">
