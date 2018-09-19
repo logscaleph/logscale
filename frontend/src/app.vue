@@ -26,12 +26,16 @@ export default {
 <style lang="scss">
 @import 'assets/styles/tailwind.postcss';
 
-// Allow element/type selectors, because this is global CSS.
-// stylelint-disable selector-max-type, selector-class-pattern
+html,
+body,
+a {
+  @apply font-sans text-grey-dark;
+}
 
-// Normalize default styles across browsers,
-// https://necolas.github.io/normalize.css/
-@import '~normalize.css/normalize.css';
+a {
+  @apply no-underline;
+}
+
 // Style loading bar between pages.
 // https://github.com/rstacruz/nprogress
 @import '~nprogress/nprogress.css';

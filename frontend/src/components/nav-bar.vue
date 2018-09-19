@@ -1,67 +1,37 @@
+<template>
+  <nav class="flex p-8 bg-white items-center justify-between">
+    <div>
+      <i class="text-grey icon-search mr-2"></i>
+      <input
+        class="text-xl text-grey-dark outline-none w-64"
+        type="text"
+        placeholder="Search Entry"
+      >
+    </div>
+    <div>
+      <a class="mx-2 hover:text-blue-light" href="#">
+        <i class="icon-grid">
+        </i>
+      </a>
+      <a class="mx-2 hover:text-blue-light" href="#">
+        <i class="icon-list">
+        </i>
+      </a>
+    </div>
+  </nav>
+</template>
+
 <script>
 import { authComputed } from '@state/helpers'
-import NavBarRoutes from './nav-bar-routes.vue'
 
 export default {
-  components: { NavBarRoutes },
   data() {
     return {
-      persistentNavRoutes: [
-        {
-          name: 'home',
-          title: 'Home',
-        },
-      ],
-      loggedInNavRoutes: [
-        {
-          name: 'profile',
-          title: () => 'Logged in as ' + this.currentUser.name,
-        },
-        {
-          name: 'logout',
-          title: 'Log out',
-        },
-      ],
-      loggedOutNavRoutes: [
-        {
-          name: 'login',
-          title: 'Log in',
-        },
-      ],
     }
   },
+
   computed: {
     ...authComputed,
   },
 }
 </script>
-
-<template>
-  <ul :class="$style.container">
-    <NavBarRoutes :routes="persistentNavRoutes" />
-    <NavBarRoutes
-      v-if="loggedIn"
-      :routes="loggedInNavRoutes"
-    />
-    <NavBarRoutes
-      v-else
-      :routes="loggedOutNavRoutes"
-    />
-  </ul>
-</template>
-
-<style lang="scss" module>
-@import '@design';
-
-.container {
-  padding: 0;
-  margin: 0 0 $size-grid-padding;
-  text-align: center;
-  list-style-type: none;
-
-  > li {
-    display: inline-block;
-    margin-right: $size-grid-padding;
-  }
-}
-</style>
