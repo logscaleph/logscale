@@ -9,39 +9,83 @@ export default {
       type: [String, Number],
       default: '',
     },
+    name: {
+      type: String,
+      default: 'text',
+    },
   },
+
   computed: {
     listeners() {
       return {
         ...this.$listeners,
         input: event => this.$emit('input', event.target.value),
       }
-    },
+    }
   },
+
+  methods: {
+    setActive() {
+      let group = this.$refs['input-group']
+      let span  = group.querySelector('span');
+      span.classList.add('active')
+    },
+
+    setBlur() {
+      let group = this.$refs['input-group']
+      let span  = group.querySelector('span');
+
+      if ( !this.value.length ) {
+        span.classList.remove('active')        
+      }
+    }
+  }
 }
 </script>
 
 <template>
-  <input
-    :type="type"
-    :value="value"
-    :class="$style.input"
-    v-on="listeners"
-  >
+  <div class="group" ref="input-group">
+    <input
+      @focus="setActive"
+      @blur="setBlur"
+      :type="type"
+      :value="value"
+      v-on="listeners"
+    >    
+    <span class="label">{{ this.name }}</span>
+  </div>
 </template>
 
-<style lang="scss" module>
-@import '@design';
+<style lang="scss">
+.group {
+  position: relative;
+  margin-bottom: 20px;
 
-.input {
-  @extend %typography-small;
+  .label {
+    position: absolute;
+    bottom: 15px;
+    font-size: 20px;
+    left: 0;
+    transition: all .1s ease;
+    text-transform: capitalize;
+  }
 
-  display: block;
-  width: 100%;
-  padding: $size-input-padding-vertical $size-input-padding-horizontal;
-  margin-bottom: $size-grid-padding;
-  line-height: 1;
-  border: $size-input-border solid $color-input-border;
-  border-radius: $size-input-border-radius;
+  .active {
+    bottom: 39px;
+    font-size: 11px;
+  }
+
+  input {
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    height: 45px;
+    line-height: 45px;
+    background: none;
+    border-bottom: 2px solid #ffffff;
+    outline: none;
+    z-index: 1;
+    color: #ffffff;
+  }
 }
 </style>

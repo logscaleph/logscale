@@ -1,0 +1,30 @@
+.login {
+    height: 100%;
+    overflow: hidden;
+
+    .left,
+    .right {
+        flex-direction: column;
+    }
+
+    .left {
+        .title, figure {
+            margin-bottom: 5rem;
+        }
+    }
+
+    .right {
+        background: linear-gradient(-180deg, #47BFFF 0%, #273FBC 97%);
+        box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.50);
+        color: #fff;
+
+        article {
+            margin-bottom: 5rem;
+        }
+
+        .title {
+            margin-bottom: 10px;
+        }
+    }
+}
+  
