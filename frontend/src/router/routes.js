@@ -27,6 +27,11 @@ export default [
     component: () => lazyLoadView(import('@views/summary')),
   },
   {
+    path: '/settings',
+    name: 'settings',
+    component: () => lazyLoadView(import('@views/settings')),
+  },
+  {
     path: '/reports',
     name: 'reports',
     component: () => lazyLoadView(import('@views/reports')),
