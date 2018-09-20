@@ -36,6 +36,16 @@ $api->version('v1', function (Router $api) {
                 ]);
             }
         ]);
+
+        // Entry
+        $api->post('entry', ['as' => 'entry.store', 'uses' => '\App\Http\Controllers\EntryController@store']);
+        $api->patch('entry/{id}', ['as' => 'entry.update', 'uses' => '\App\Http\Controllers\EntryController@update']);
+        $api->delete('entry/{id}', ['as' => 'entry.destroy', 'uses' => '\App\Http\Controllers\EntryController@destroy']);
+
+        // Entry Detail
+        $api->post('entry-detail', ['as' => 'entry-detail.store', 'uses' => '\App\Http\Controllers\EntryDetailController@store']);
+        $api->patch('entry-detail/{id}', ['as' => 'entry-detail.update', 'uses' => '\App\Http\Controllers\EntryDetailController@update']);
+        $api->delete('entry-detail/{id}', ['as' => 'entry-detail.destroy', 'uses' => '\App\Http\Controllers\EntryDetailController@destroy']);
     });
 
     $api->get('hello', function() {
