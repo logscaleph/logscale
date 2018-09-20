@@ -14,7 +14,7 @@ export default {
     return {
       username: '',
       password: '',
-      password: false,
+      remember: false,
       authError: null,
       tryingToLogIn: false,
     }
@@ -23,25 +23,25 @@ export default {
     ...authMethods,
     // Try to log the user in with the username
     // and password they provided.
-    tryToLogIn() {
+    async tryToLogIn() {
       this.tryingToLogIn = true
       // Reset the authError if it existed.
       this.authError = null
-      return this.logIn({
-        username: this.username,
-        password: this.password,
-        remember: this.remember,
-      })
-        .then(token => {
-          this.tryingToLogIn = false
+      try {
+        const { data } = await this.logIn({
+          username: this.username,
+          password: this.password,
+          remember: this.remember,
+        })
 
-          // Redirect to the originally requested page, or to the home page
-          this.$router.push(this.$route.query.redirectFrom || { name: 'home' })
-        })
-        .catch(error => {
-          this.tryingToLogIn = false
-          this.authError = error
-        })
+        this.tryingToLogIn = false
+
+        // Redirect to the originally requested page, or to the home page
+        this.$router.push(this.$route.query.redirectFrom || { name: 'home' })
+      } catch (e) {
+        this.tryingToLogIn = false
+        this.authError = error
+      }
     },
   },
 }
@@ -104,7 +104,7 @@ export default {
             <p v-if="authError" class="mt-5">
               There was an error logging in to your account.
             </p>
-          </form>              
+          </form>
         </div>
 
       </template>

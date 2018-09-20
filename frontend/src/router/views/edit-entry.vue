@@ -3,8 +3,8 @@ import Layout from '@layouts/editor'
 
 export default {
   page: {
-    title: 'EditEntry',
-    meta: [{ name: 'description', content: 'EditEntry' }],
+    title: 'Edit Entry',
+    meta: [{ name: 'description', content: 'Edit Entry' }],
   },
   components: { Layout }
 }
