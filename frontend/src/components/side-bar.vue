@@ -20,12 +20,12 @@
     </li>
 
     <li class="mt-4 mb-2">
-      <a
+      <router-link
         class="text-white rounded py-4 text-center bg-blue-gradient block"
-        href="#"
+        :to="{ name: 'log-entry' }"
       >
         Log Entry
-      </a>
+      </router-link>
     </li>
     <li>
       <a

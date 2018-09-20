@@ -7,6 +7,16 @@ export default [
     component: () => lazyLoadView(import('@views/home')),
   },
   {
+    path: '/entries/:id/edit',
+    name: 'edit-entry',
+    component: () => lazyLoadView(import('@views/edit-entry')),
+  },
+  {
+    path: '/entries/add',
+    name: 'log-entry',
+    component: () => lazyLoadView(import('@views/log-entry')),
+  },
+  {
     path: '/entries',
     name: 'entries',
     component: () => lazyLoadView(import('@views/entries')),

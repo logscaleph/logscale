@@ -6,11 +6,11 @@
 // Icons
 @font-face {
   font-family: 'icomoon';
-  src:  url('/fonts/icons/icomoon.eot?tvzoj9');
-  src:  url('/fonts/icons/icomoon.eot?tvzoj9#iefix') format('embedded-opentype'),
-    url('/fonts/icons/icomoon.ttf?tvzoj9') format('truetype'),
-    url('/fonts/icons/icomoon.woff?tvzoj9') format('woff'),
-    url('/fonts/icons/icomoon.svg?tvzoj9#icomoon') format('svg');
+  src:  url('/fonts/icons/icomoon.eot?q0pt9d');
+  src:  url('/fonts/icons/icomoon.eot?q0pt9d#iefix') format('embedded-opentype'),
+    url('/fonts/icons/icomoon.ttf?q0pt9d') format('truetype'),
+    url('/fonts/icons/icomoon.woff?q0pt9d') format('woff'),
+    url('/fonts/icons/icomoon.svg?q0pt9d#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,6 +30,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-erase:before {
+  content: "\e908";
+}
+.icon-calculator:before {
+  content: "\e909";
+}
+.icon-expand:before {
+  content: "\e90a";
+}
+.icon-info:before {
+  content: "\e90b";
+}
+.icon-power:before {
+  content: "\e90c";
+}
+.icon-print:before {
+  content: "\e90d";
+}
+.icon-save:before {
+  content: "\e90e";
+}
 .icon-chart:before {
   content: "\e900";
 }
